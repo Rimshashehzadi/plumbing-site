@@ -22,11 +22,11 @@ const MobileNavbar = () => {
       name: "Pages",
       subMenu: [
         { name: "About Us", path: "/about" },
-        { name: "Hospitals", path: "/hospitals" },
+
         { name: "Contact Us", path: "/contact" },
         { name: "Signup", path: "/signup" },
-        { name: "Doctor Register", path: "/doctorregister" },
-       
+
+
       ],
     },
 
@@ -55,23 +55,21 @@ const MobileNavbar = () => {
       {/* Overlay */}
       <div
         onClick={() => setIsMenuOpen(false)}
-        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 lg:hidden ${
-          isMenuOpen
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 lg:hidden ${isMenuOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible"
-        }`}
+          }`}
       ></div>
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 h-screen w-[85%] max-w-82.5 bg-primary text-white shadow-xl overflow-y-auto transition-transform duration-300 ${
-          isMenuOpen
+        className={`fixed top-0 left-0 z-50 h-screen w-[85%] max-w-82.5 bg-primary text-white shadow-xl overflow-y-auto transition-transform duration-300 ${isMenuOpen
             ? "translate-x-0"
             : "-translate-x-full"
-        }`}
+          }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-gray-700 p-5">
+        <div className="flex items-center justify-between border-b border-amber-50 p-5">
           <img
             src={logo2}
             alt="logo"
@@ -80,7 +78,7 @@ const MobileNavbar = () => {
 
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="rounded-full p-2 hover:bg-gray-700 transition"
+            className="rounded-full p-2 hover:bg-gray-700 transition cursor-pointer"
           >
             <RxCross2 size={24} />
           </button>
@@ -92,36 +90,34 @@ const MobileNavbar = () => {
             {menu.map((item, index) => (
               <li
                 key={index}
-                className="border-b border-gray-800 pb-2"
+                className="border-b border-amber-50 pb-2"
               >
                 {item.subMenu ? (
                   <>
                     {/* Parent Menu */}
                     <button
                       onClick={() => toggleDropdown(index)}
-                      className="flex w-full items-center justify-between py-3 text-left text-lg font-medium text-white/80 hover:text-white transition"
+                      className="flex w-full items-center justify-between py-1 text-left text-lg font-medium text-white/80 hover:text-white transition"
                     >
                       <span>{item.name}</span>
 
                       <IoChevronDown
                         size={18}
-                        className={`transition-transform duration-300 ${
-                          openDropdown === index
+                        className={`transition-transform duration-300 cursor-pointer ${openDropdown === index
                             ? "rotate-180"
                             : ""
-                        }`}
+                          }`}
                       />
                     </button>
 
                     {/* Dropdown */}
                     <div
-                      className={`overflow-hidden transition-all duration-300 ${
-                        openDropdown === index
+                      className={`overflow-hidden transition-all duration-300 ${openDropdown === index
                           ? "max-h-175 opacity-100"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
-                      <ul className="border-l ml-3 space-y-3 border-amber-50 py-2 mr-2">
+                      <ul className="ml-4  border-amber-50 py-2 ">
                         {item.subMenu.map((subItem) => (
                           <li key={subItem.name}>
                             <Link
@@ -129,7 +125,7 @@ const MobileNavbar = () => {
                               onClick={() =>
                                 setIsMenuOpen(false)
                               }
-                              className="flex items-center justify-between text-sm text-gray-400 hover:text-white transition"
+                              className="flex items-center justify-between p-2   hover:bg-white hover:text-primary transition text-lg rounded-lg text-gray-300  duration-500"
                             >
                               {subItem.name}
 
@@ -156,7 +152,7 @@ const MobileNavbar = () => {
           </ul>
 
           {/* Social */}
-          <div className="mt-10 pt-6">
+          <div className="mt-2 pt-6">
             <h3 className="text-lg font-semibold">
               Follow Us
             </h3>
