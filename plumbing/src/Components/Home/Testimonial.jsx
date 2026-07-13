@@ -13,6 +13,7 @@ import client3 from "../../assets/client3.avif";
 import client4 from "../../assets/client4.avif";
 import client5 from "../../assets/client5.avif";
 import client6 from "../../assets/client6.avif";
+// import StatsSection from "./StatsSection";
 
 // import StatsSection from "./StatesSection";
 // import BottomGallery from "./BottomGallery";
@@ -154,6 +155,9 @@ const Testimonial = () => {
           ))}
         </Swiper>
       </div>
+      {/* <div>
+        <StatsSection/>
+      </div> */}
 
       {/* Stats */}
       {/* <div className="mt-12 sm:mt-16 lg:mt-20">

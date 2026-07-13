@@ -4,6 +4,8 @@ import Navbar from './Components/Navbar/Navbar'
 import Footer from './Components/Footer/Footer'
 import Home from '../src/Pages/Home/Home'
 import Contact from './Pages/Contact/Contact'
+import About from './Pages/About/About'
+import ScrollProgress from './Components/Home/ScrollProgress'
 
 
 const App = () => {
@@ -13,9 +15,11 @@ const App = () => {
       <Routes>
        <Route path='/' element={<Home/>} />
        <Route path='/contact' element={<Contact/>}/>
+       <Route path='/about' element={<About/>}/>
       </Routes>
-
+<ScrollProgress/>
       <Footer/>
+
     </div>
   )
 }

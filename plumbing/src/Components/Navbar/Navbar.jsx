@@ -16,17 +16,15 @@ const Navbar = () => {
       path: '',
       subMenu: [
         { name: "About Us", path: "/about" },
-        { name: "Hospitals", path: "/hospitals" },
-        { name: "Contact Us", path: "/contact" },
-     
-
+        { name: "FAQ's", path: "/FAQ" },
+        { name: "Our Team", path: "/our team" },
         { name: "Signup", path: "/signup" },
 
       ],
     },
 
     { name: "Blog", path: '/blogs' },
-    { name: "Shop", path: "/admin" },
+    { name: "Shop", path: "/shop" },
     { name: "Contact Us", path: "/contact" },
 
   ];

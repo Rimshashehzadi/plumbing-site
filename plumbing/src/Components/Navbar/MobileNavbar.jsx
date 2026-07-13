@@ -22,10 +22,9 @@ const MobileNavbar = () => {
       name: "Pages",
       subMenu: [
         { name: "About Us", path: "/about" },
-
-        { name: "Contact Us", path: "/contact" },
+        { name: "FAQ's", path: "/FAQ" },
+        { name: "Our Team", path: "/our team" },
         { name: "Signup", path: "/signup" },
-
 
       ],
     },

@@ -5,7 +5,9 @@ import Services from '../../Components/Home/Services'
 import Projects from '../../Components/Home/Projects'
 import ContactHero from '../../Components/Contact/ContactHero'
 import Testimonial from '../../Components/Home/Testimonial'
-import StateSection from '../../Components/Home/StateSection'
+import BottomGallery from '../../Components/Home/BottomGallery'
+// import {StatsSection} from '../../Components/Home/StatsSection'
+// import StateSection from '../../Components/Home/StateSection'
 
 
 const Home = () => {
@@ -17,7 +19,9 @@ const Home = () => {
         <Projects/>
         <ContactHero/>
         <Testimonial/>
-        <StateSection/>
+        {/* <StatsSection/> */}
+        <BottomGallery/>
+        {/* <StateSection/> */}
     </div>
   )
 }
