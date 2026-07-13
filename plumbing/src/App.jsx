@@ -5,6 +5,8 @@ import Footer from './Components/Footer/Footer'
 import Home from '../src/Pages/Home/Home'
 import Contact from './Pages/Contact/Contact'
 import About from './Pages/About/About'
+import FAQ from './Pages/Pages/FAQ'
+import OurTeam from './Pages/Pages/OurTeam'
 import ScrollProgress from './Components/Home/ScrollProgress'
 
 
@@ -16,6 +18,8 @@ const App = () => {
        <Route path='/' element={<Home/>} />
        <Route path='/contact' element={<Contact/>}/>
        <Route path='/about' element={<About/>}/>
+       <Route path='/faq' element={<FAQ/>}/>
+       <Route path='/ourteam' element={<OurTeam/>}/>
       </Routes>
 <ScrollProgress/>
       <Footer/>
