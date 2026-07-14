@@ -13,6 +13,8 @@ import Blog from './Pages/Blog/Blog'
 import ProductList from './Pages/Shop/ProductList'
 import Cart from './Pages/Shop/Cart'
 import WishListPage from './Pages/Shop/WishListPage'
+import Login from './Pages/Auth/Login'
+import SignUp from './Pages/Auth/SignUp'
 
 
 const App = () => {
@@ -30,6 +32,8 @@ const App = () => {
        <Route path='/productlist' element={<ProductList/>}/>
        <Route path='/cart' element= {<Cart/>}/>
        <Route path='/wishlistpage' element={<WishListPage/>}/>
+        <Route path='/signup' element= {<SignUp/>}/>
+         <Route path='/login' element= {<Login/>}/>
       </Routes>
 <ScrollProgress/>
       <Footer/>
