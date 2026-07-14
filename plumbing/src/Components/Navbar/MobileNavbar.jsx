@@ -69,7 +69,7 @@ const MobileNavbar = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 h-screen w-[85%] max-w-[330px] bg-primary text-white shadow-xl overflow-y-auto transition-transform duration-300 ${
+        className={`fixed top-0 left-0 z-50 h-screen w-[85%] max-w-82.5 bg-primary text-white shadow-xl overflow-y-auto transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
