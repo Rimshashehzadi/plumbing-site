@@ -4,7 +4,7 @@ import logo from "../../assets/logo.webp";
 import { IoChevronDown } from "react-icons/io5";
 import { Grip, Search, ShoppingBag } from "lucide-react";
 import MobileNavbar from "./MobileNavbar";
-import SideBar from "./SideBar";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -124,7 +124,7 @@ const Navbar = () => {
               />
             </button>
 
-            <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
 
           {/* Mobile Navbar */}
