@@ -1,111 +1,171 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import bgImg from "../../assets/about1.avif";     // Water heater image
-import personImg from "../../assets/about2.png"; // Plumber image
+import bgImg from "../../assets/about1.avif";
+import personImg from "../../assets/about2.png";
 
 const AboutHero = () => {
   return (
-    <section className="bg-[#F7F8F8] py-16 lg:py-28 overflow-hidden">
-
-      <div className="max-w-7xl mx-auto px-5 lg:px-10">
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-
+    <section className="bg-[#F7F8F8] py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* LEFT IMAGES */}
-
           <motion.div
             initial={{ opacity: 0, x: -80 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative flex justify-center"
+            className="relative flex justify-center items-end"
           >
-
-            {/* Main Image */}
-
-            <img
+            {/* Background Image */}
+            <motion.img
               src={bgImg}
-              alt=""
-              className="w-full max-w-130 h-75 sm:h-112.5 lg:h-150 object-cover"
+              alt="Water Heater"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl h-[280px] sm:h-[400px] md:h-[500px] lg:h-[620px] object-cover rounded-xl shadow-xl"
             />
 
-            {/* Floating Image */}
-
+            {/* Floating Plumber */}
             <motion.img
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9 }}
-              viewport={{ once: true }}
               src={personImg}
-              alt=""
+              alt="Professional Plumber"
+              initial={{ opacity: 0, y: 80, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.9, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{
+                y: -10,
+                transition: { duration: 0.3 },
+              }}
               className="
-              w-52
-              sm:w-72
-              lg:w-80
-              absolute
-              -bottom-7.5
-              right-0
-              lg:-right-5
-              shadow-2xl
+                absolute
+                bottom-0
+                right-2
+                sm:right-4
+                md:right-6
+                lg:-right-5
+                w-36
+                sm:w-48
+                md:w-60
+                lg:w-72
+                xl:w-80
+                drop-shadow-2xl
               "
             />
-
           </motion.div>
 
           {/* RIGHT CONTENT */}
-
           <motion.div
             initial={{ opacity: 0, x: 80 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: .8 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center lg:text-left"
           >
-
-            <p className="uppercase tracking-[5px] text-gray-500 font-semibold">
+            {/* Small Heading */}
+            <motion.p
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="uppercase tracking-[3px] sm:tracking-[5px] text-xs sm:text-sm font-semibold text-gray-500"
+            >
               Premium Quality
-            </p>
+            </motion.p>
 
-            <h2 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+            {/* Main Heading */}
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mt-4 sm:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900"
+            >
               We solve plumbing
-              <br />
-              puzzles for you
-            </h2>
+              <br className="hidden sm:block" />
+              <span className="block sm:inline"> puzzles for you</span>
+            </motion.h2>
 
-            <p className="mt-8 text-gray-500 leading-8 max-w-lg">
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="mt-6 sm:mt-8 text-gray-500 leading-7 sm:leading-8 text-sm sm:text-base max-w-xl mx-auto lg:mx-0"
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
+              sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Our experienced plumbing team delivers reliable,
+              affordable, and long-lasting solutions for homes and
+              businesses.
+            </motion.p>
 
-            <div className="mt-10 space-y-2 text-gray-600 font-medium">
-
+            {/* Working Hours */}
+            <motion.div
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="mt-8 sm:mt-10 space-y-3 text-gray-700 text-sm sm:text-base font-medium"
+            >
               <p>
-                <span className="font-semibold">
-                  MON-FRI:
+                <span className="font-bold text-gray-900">
+                  MON–FRI:
                 </span>{" "}
                 9 AM – 10 PM
               </p>
 
               <p>
-                <span className="font-semibold">
+                <span className="font-bold text-gray-900">
                   SATURDAY:
                 </span>{" "}
                 9 AM – 6 PM
               </p>
+            </motion.div>
 
-            </div>
-
-            <button className="mt-10 bg-primary hover:bg-primary/90 text-white px-10 py-4 font-semibold transition duration-300 cursor-pointer">
+            {/* Button */}
+            <motion.button
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              viewport={{ once: true }}
+              whileHover={{
+                scale: 1.05,
+              }}
+              whileTap={{
+                scale: 0.95,
+              }}
+              className="
+                mt-8
+                sm:mt-10
+                bg-primary
+                hover:bg-primary/90
+                text-white
+                px-6
+                sm:px-8
+                lg:px-10
+                py-3
+                sm:py-4
+                rounded-md
+                font-semibold
+                text-sm
+                sm:text-base
+                transition-all
+                duration-300
+                shadow-lg
+                cursor-pointer
+              "
+            >
               Visit Our Store Now
-            </button>
-
+            </motion.button>
           </motion.div>
-
         </div>
-
       </div>
-
     </section>
   );
 };

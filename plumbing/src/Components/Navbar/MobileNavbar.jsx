@@ -29,8 +29,18 @@ const MobileNavbar = () => {
       ],
     },
 
-    { name: "Blog", path: "/blogs" },
-    { name: "Shop", path: "/shop" },
+    { name: "Blog", path: "/blog" },
+    {
+      name: "Shop",
+      path: '',
+      subMenu: [
+        { name: "Product list", path: "/productlist" },
+        { name: "Cart", path: "/cart" },
+        { name: "WishList Page", path: "/wishlistpage" },
+
+
+      ],
+    },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -55,16 +65,16 @@ const MobileNavbar = () => {
       <div
         onClick={() => setIsMenuOpen(false)}
         className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 lg:hidden ${isMenuOpen
-            ? "opacity-100 visible"
-            : "opacity-0 invisible"
+          ? "opacity-100 visible"
+          : "opacity-0 invisible"
           }`}
       ></div>
 
       {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 z-50 h-screen w-[85%] max-w-82.5 bg-primary text-white shadow-xl overflow-y-auto transition-transform duration-300 ${isMenuOpen
-            ? "translate-x-0"
-            : "-translate-x-full"
+          ? "translate-x-0"
+          : "-translate-x-full"
           }`}
       >
         {/* Header */}
@@ -103,8 +113,8 @@ const MobileNavbar = () => {
                       <IoChevronDown
                         size={18}
                         className={`transition-transform duration-300 cursor-pointer ${openDropdown === index
-                            ? "rotate-180"
-                            : ""
+                          ? "rotate-180"
+                          : ""
                           }`}
                       />
                     </button>
@@ -112,8 +122,8 @@ const MobileNavbar = () => {
                     {/* Dropdown */}
                     <div
                       className={`overflow-hidden transition-all duration-300 ${openDropdown === index
-                          ? "max-h-175 opacity-100"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-175 opacity-100"
+                        : "max-h-0 opacity-0"
                         }`}
                     >
                       <ul className="ml-4  border-amber-50 py-2 ">

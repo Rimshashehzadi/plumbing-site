@@ -93,9 +93,12 @@ export default function OurTeam() {
             Meet Our Experts
           </p>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#16253d] mt-3">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900">
             Our Team
           </h2>
+            <div className="mt-5 text-primary text-3xl">
+              ↓
+            </div>
         </motion.div>
 
         {/* Cards */}

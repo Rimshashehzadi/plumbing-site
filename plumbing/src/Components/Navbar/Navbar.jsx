@@ -11,7 +11,7 @@ import SideBar from './SideBar';
 const Navbar = () => {
   const Menu = [
     { name: "Home", path: '/' },
- {
+    {
       name: "Pages",
       path: '',
       subMenu: [
@@ -23,8 +23,19 @@ const Navbar = () => {
       ],
     },
 
-    { name: "Blog", path: '/blogs' },
-    { name: "Shop", path: "/shop" },
+
+    { name: "Blog", path: "/blog" },
+    {
+      name: "Shop",
+      path: '',
+      subMenu: [
+        { name: "Product list", path: "/productlist" },
+        { name: "Cart", path: "/cart" },
+        { name: "WishList Page", path: "/wishlistpage" },
+
+
+      ],
+    },
     { name: "Contact Us", path: "/contact" },
 
   ];
@@ -40,48 +51,48 @@ const Navbar = () => {
             <img src={logo} alt="Company Logo" className="h-10 w-auto" />
           </Link>
           {/* 🔹 Desktop Menu */}
-         <ul className="hidden lg:flex items-center gap-8">
-  {Menu.map((item, index) => (
-    <li
-      key={index}
-      className="group relative"
-    >
-      {item.subMenu ? (
-        <button className="flex items-center gap-1 text-xl font-semibold text-gray-700 hover:text-primary transition">
-          {item.name}
-          <IoChevronDown
-            size={16}
-            className="group-hover:rotate-180 transition duration-300"
-          />
-        </button>
-      ) : (
-        <Link
-          to={item.path}
-          className="relative text-xl font-semibold text-gray-700 hover:text-primary after:absolute after:left-0 after:-bottom-1 after:h-0.75 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-        >
-          {item.name}
-        </Link>
-      )}
+          <ul className="hidden lg:flex items-center gap-8">
+            {Menu.map((item, index) => (
+              <li
+                key={index}
+                className="group relative"
+              >
+                {item.subMenu ? (
+                  <button className="flex items-center gap-1 text-xl font-semibold text-gray-700 hover:text-primary transition">
+                    {item.name}
+                    <IoChevronDown
+                      size={16}
+                      className="group-hover:rotate-180 transition duration-300"
+                    />
+                  </button>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className="relative text-xl font-semibold text-gray-700 hover:text-primary after:absolute after:left-0 after:-bottom-1 after:h-0.75 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                  >
+                    {item.name}
+                  </Link>
+                )}
 
-      {item.subMenu && (
-        <div className="absolute left-0 top-full mt-4 w-64 rounded-lg bg-primary text-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-          <ul className="py-2">
-            {item.subMenu.map((subItem, i) => (
-              <li key={i}>
-                <Link
-                  to={subItem.path}
-                  className="block px-5 py-3 text-white hover:bg-white hover:text-primary transition"
-                >
-                  {subItem.name}
-                </Link>
+                {item.subMenu && (
+                  <div className="absolute left-0 top-full mt-4 w-64 rounded-lg bg-primary text-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <ul className="py-2">
+                      {item.subMenu.map((subItem, i) => (
+                        <li key={i}>
+                          <Link
+                            to={subItem.path}
+                            className="block px-5 py-3 text-white hover:bg-white hover:text-primary transition"
+                          >
+                            {subItem.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
-        </div>
-      )}
-    </li>
-  ))}
-</ul>
           {/* 🔹 Right Side */}
           <div className=" items-center gap-4 hidden lg:flex">
             <div className="relative inline-block cursor-pointer">

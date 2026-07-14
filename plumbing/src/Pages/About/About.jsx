@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import AboutHero from '../../Components/About/AboutHero';
 import Projects from '../../Components/Home/Projects'
 import VideoSection from '../../Components/About/VedioSection';
+import Stats from '../../Components/About/Stats';
+import AboutAward from '../../Components/About/AboutAward';
 // import AboutCounter from '../../Components/About/AboutCounter';
 
 const About = () => {
@@ -23,9 +25,11 @@ const About = () => {
             </div>
           </div>
           <AboutHero/>
+          <Stats/>
           {/* <AboutCounter/> */}
            <VideoSection/>
           <Projects/>
+          <AboutAward/>
          
   </section>
   )

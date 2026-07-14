@@ -3,32 +3,34 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import cmg from '../../assets/cmg.webp'
-import bosh from '../../assets/bosh.png'
-import cat from '../../assets/cat.webp'
-import metabo from '../../assets/metabo.webp'
-import kita from '../../assets/kita.webp'
-import john from '../../assets/john.webp'
 
 import "swiper/css";
 import "swiper/css/navigation";
+
+import cmg from "../../assets/cmg.webp";
+import bosh from "../../assets/bosh.png";
+import cat from "../../assets/cat.webp";
+import metabo from "../../assets/metabo.webp";
+import kita from "../../assets/kita.webp";
+import john from "../../assets/john.webp";
 
 import bath from "../../assets/bath.avif";
 import kitchen from "../../assets/kitchen.avif";
 import pipe from "../../assets/pipe.avif";
 import leak from "../../assets/leak.avif";
-import leak2 from '../../assets/leak2.avif'
+import leak2 from "../../assets/leak2.avif";
 
 const Projects = () => {
   const swiperRef = useRef(null);
-   const brands = [
-  { img: bosh, name: "Bosch" },
-  { img: cat, name: "CAT" },
-  { img: kita, name: "KITA" },
-  { img: metabo, name: "Metabo" },
-  { img: cmg, name: "CMG" },
-  { img: john, name: "John Deere" },
-];
+
+  const brands = [
+    { img: bosh, name: "Bosch" },
+    { img: cat, name: "CAT" },
+    { img: kita, name: "KITA" },
+    { img: metabo, name: "Metabo" },
+    { img: cmg, name: "CMG" },
+    { img: john, name: "John Deere" },
+  ];
 
   const projects = [
     {
@@ -58,140 +60,130 @@ const Projects = () => {
     {
       id: 5,
       image: leak2,
-      title: "Leak Detection",
-      description: "Modern leak detection with advanced tools.",
+      title: "Emergency Service",
+      description: "24/7 plumbing solutions for your home and office.",
     },
   ];
 
   return (
-    <section className="bg-gray-100 py-20">
-      <div className="max-w-7xl mx-auto px-6">
-
+    <section className="bg-gray-100 py-14 sm:py-16 lg:py-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .8 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex flex-col lg:flex-row justify-between items-center mb-14"
+          className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 mb-12"
         >
-          <div>
-            <p className="uppercase tracking-[5px] text-primary font-semibold">
+          <div className="text-center lg:text-left">
+            <p className="uppercase tracking-[4px] text-primary font-semibold text-sm">
               Work Examples
             </p>
 
-            <h2 className="text-5xl font-bold mt-3">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 leading-tight">
               Our Projects
             </h2>
           </div>
 
-          <p className="max-w-xl text-gray-500 mt-6 lg:mt-0 text-lg font-normal">
-            We deliver high-quality plumbing solutions with
-            professional workmanship and customer satisfaction.
+          <p className="max-w-xl text-gray-500 text-base sm:text-lg text-center lg:text-left">
+            We deliver high-quality plumbing solutions with professional
+            workmanship and customer satisfaction.
           </p>
 
-          <div className="flex gap-4 mt-8 lg:mt-0">
-
+          <div className="flex justify-center lg:justify-end gap-3">
             <button
-              onClick={() => swiperRef.current.slidePrev()}
-              className="w-12 h-12 rounded-full cursor-pointer border hover:bg-primary hover:text-white transition"
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition flex items-center justify-center"
             >
-              <ArrowLeft className="mx-auto" size={20} />
+              <ArrowLeft size={20} />
             </button>
 
             <button
-              onClick={() => swiperRef.current.slideNext()}
-              className="w-12 h-12 rounded-full border hover:bg-primary hover:text-white transition"
+              onClick={() => swiperRef.current?.slideNext()}
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition flex items-center justify-center"
             >
-              <ArrowRight className="mx-auto" size={20} />
+              <ArrowRight size={20} />
             </button>
-
           </div>
         </motion.div>
 
         {/* Swiper */}
         <Swiper
           modules={[Navigation]}
-          spaceBetween={30}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           breakpoints={{
             0: {
               slidesPerView: 1,
+              spaceBetween: 15,
             },
-            768: {
+            640: {
               slidesPerView: 2,
+              spaceBetween: 20,
             },
-            1200: {
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 25,
+            },
+            1280: {
               slidesPerView: 3,
+              spaceBetween: 30,
             },
           }}
         >
           {projects.map((project) => (
             <SwiperSlide key={project.id}>
-
               <motion.div
                 whileHover={{ y: -10 }}
-                transition={{ duration: .3 }}
-                className="group overflow-hidden rounded-xl bg-white shadow-lg cursor-pointer"
+                transition={{ duration: 0.3 }}
+                className="group rounded-xl overflow-hidden bg-white shadow-lg"
               >
                 <div className="relative overflow-hidden">
-
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-112.5 object-cover transition duration-700 group-hover:scale-110"
+                    className="w-full h-64 sm:h-80 md:h-96 lg:h-[450px] object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
-
-                    <div className="p-6 translate-y-12 group-hover:translate-y-0 transition duration-500">
-
-                      <h3 className="text-white text-3xl font-bold">
+                    <div className="p-4 sm:p-6 translate-y-10 group-hover:translate-y-0 transition duration-500">
+                      <h3 className="text-white text-xl sm:text-2xl lg:text-3xl font-bold">
                         {project.title}
                       </h3>
 
-                      <p className="text-white/80 text-lg font-normal mt-3">
+                      <p className="text-white/80 text-sm sm:text-base mt-2">
                         {project.description}
                       </p>
-
                     </div>
-
                   </div>
-
                 </div>
-
               </motion.div>
-
             </SwiperSlide>
           ))}
         </Swiper>
-    
 
-<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center mt-20">
-  {brands.map((brand, index) => (
-    <div
-      key={index}
-      className="group cursor-pointer overflow-hidden"
-    >
-      <img
-        src={brand.img}
-        alt={brand.name}
-        className="
-          w-28 sm:w-32 md:w-36 lg:w-40
-          h-16 object-contain
-          grayscale
-          opacity-70
-          transition-all
-          duration-500
-          group-hover:grayscale-0
-          group-hover:opacity-100
-          group-hover:-translate-y-3
-        "
-      />
-    </div>
-  ))}
-</div>
+        {/* Brand Logos */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 mt-16 lg:mt-20 items-center justify-items-center"
+        >
+          {brands.map((brand, index) => (
+            <div
+              key={index}
+              className="group cursor-pointer overflow-hidden flex items-center justify-center"
+            >
+              <img
+                src={brand.img}
+                alt={brand.name}
+                className="w-20 sm:w-24 md:w-28 lg:w-32 xl:w-36 h-12 sm:h-14 md:h-16 object-contain grayscale opacity-70 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 group-hover:-translate-y-2"
+              />
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

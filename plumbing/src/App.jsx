@@ -8,6 +8,11 @@ import About from './Pages/About/About'
 import FAQ from './Pages/Pages/FAQ'
 import OurTeam from './Pages/Pages/OurTeam'
 import ScrollProgress from './Components/Home/ScrollProgress'
+import Blog from './Pages/Blog/Blog'
+// import Shop from './Pages/Shop/Shop'
+import ProductList from './Pages/Shop/ProductList'
+import Cart from './Pages/Shop/Cart'
+import WishListPage from './Pages/Shop/WishListPage'
 
 
 const App = () => {
@@ -20,6 +25,11 @@ const App = () => {
        <Route path='/about' element={<About/>}/>
        <Route path='/faq' element={<FAQ/>}/>
        <Route path='/ourteam' element={<OurTeam/>}/>
+       <Route path='/blog' element={<Blog/>}/>
+       {/* <Route path='/shop' element={<Shop/>}/> */}
+       <Route path='/productlist' element={<ProductList/>}/>
+       <Route path='/cart' element= {<Cart/>}/>
+       <Route path='/wishlistpage' element={<WishListPage/>}/>
       </Routes>
 <ScrollProgress/>
       <Footer/>
