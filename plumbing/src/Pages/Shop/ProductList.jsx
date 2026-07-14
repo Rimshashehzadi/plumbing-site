@@ -26,8 +26,9 @@ const products = [
     name: "Pumping Station",
     price: "$120.00",
     image:
-      "https://images.unsplash.com/photo-1617098474202-0d0d7f60c4d8?w=700",
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700",
   },
+   
   {
     id: 4,
     name: "Drain Hose",
