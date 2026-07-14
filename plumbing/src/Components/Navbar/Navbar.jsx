@@ -32,7 +32,7 @@ const Navbar = () => {
         { name: "Wishlist Page", path: "/wishlistpage" },
       ],
     },
-    { name: "Contact Us", path: "/contact" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
