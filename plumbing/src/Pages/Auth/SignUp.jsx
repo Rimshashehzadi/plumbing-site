@@ -88,7 +88,7 @@ const SignUp = () => {
           <p className="text-sm text-center mt-5 text-taupe-500  font-medium ">
             Already have an account?{" "}
             <Link to="/login" className="text-primary  font-bold">
-              Sign Up
+              Login
             </Link>
           </p>
         </motion.div>

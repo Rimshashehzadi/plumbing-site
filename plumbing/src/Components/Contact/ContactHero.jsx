@@ -14,8 +14,8 @@ const ContactHero = () => {
       <div className="absolute inset-0 bg-black/30"></div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center lg:justify-end">
-          <div className="w-full sm:w-[90%] md:w-[80%] lg:w-[520px] xl:w-[560px]">
+        <div className="flex justify-center ">
+          <div className="w-full sm:w-[90%] md:w-[80%] lg:w-130 xl:w-140">
             <ContactForm />
           </div>
         </div>
